@@ -39,7 +39,12 @@ class SecClass extends OddEvenProblem{
         }
 
 class ThirdClass extends SecClass{
+//    create an array of vowels
+    String[] vowelArray = {"a", "e", "i", "o", "u"};
     public void FindOddEven(){
-
+//        for (String eachName: arr1
+//             ) {
+//
+//        }
     }
 }
