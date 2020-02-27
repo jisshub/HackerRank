@@ -1,15 +1,17 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        SecClass obj1 = new SecClass();
+        ThirdClass obj1 = new ThirdClass();
         obj1.getValues();
         obj1.getStrings();
+        obj1.FindOddEven();
     }
 }
 
@@ -34,17 +36,38 @@ class SecClass extends OddEvenProblem{
             arr1.add(str1);
             limit -- ;
         }
-        System.out.println(arr1.toString());
+        System.out.println("resultant array: " + arr1);
+//        System.out.println(arr1.getClass().getName());
     }
         }
 
+
 class ThirdClass extends SecClass{
-//    create an array of vowels
-    String[] vowelArray = {"a", "e", "i", "o", "u"};
-    public void FindOddEven(){
-//        for (String eachName: arr1
-//             ) {
-//
-//        }
-    }
+//    declare an array list to get even characters in a string
+    ArrayList<Character> EvenArray;
+    ArrayList<Character> OddArray;
+    public void FindOddEven() {
+        EvenArray = new ArrayList<>();
+        OddArray = new ArrayList<>();
+        for (int i = 0; i < arr1.size(); i++) {
+//            System.out.println(arr1.get(i));
+            String myString = arr1.get(i);
+//            get the type of variable, already know its String but im confused.
+            System.out.println(myString.getClass().getName());
+//            iterate thru the each string and get the character
+            for (int j = 0; j < myString.length() ; j++) {
+//                System.out.println(myString.charAt(j));
+//                EvenArray.add(myString.charAt(j));
+                if (myString.indexOf(myString.charAt(j)) % 2 == 0){
+                    EvenArray.add(myString.charAt(j));
+                }
+                else {
+                    OddArray.add(myString.charAt(j));
+                }
+            }
+        }
+        System.out.println("Even Charters Array:" + EvenArray.toString());
+        System.out.println("Odd Charters Array:" + OddArray.toString());
+        }
 }
+
